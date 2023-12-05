@@ -1,5 +1,5 @@
 # Guided mode resonance spectrum analysis
-Python script for an S4 RCWA simulation in Lua to model and plot the reflection spectrum and phase of a 1D guided mode resonance grating.
+Python scripts for S4 RCWA simulations in Lua to model and plot the reflection spectrum and phase of a 1D guided mode resonance grating. Also included are is a script that iterates through given grating parameters (period, thickness etc.) and plots the corresponding reflection spectra.
 
 ## Features
 The code works as follows:
