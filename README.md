@@ -8,7 +8,7 @@ The code works as follows:
 * The phase is computed using the complex amplitude of the reflected wave
 * The reflection and phase data are read into the python script from csv files, where they are then plotted
 
-Update: Spectra_field_extraction.py provides a more recent script that allows the user to toggle electric field simulations with a boolean flag.
+Update 09/03/25: Spectra_field_extraction.py provides a more recent script that allows the user to toggle electric field simulations with a boolean flag.
 
 ## Requirements
 These scripts were tested using Python 3.11, and S4 requires Lua 5.2.4.
