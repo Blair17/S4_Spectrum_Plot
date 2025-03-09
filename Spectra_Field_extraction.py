@@ -7,7 +7,7 @@ import scienceplots
 
 from Functions import figure_refl, FWHM, findpeaks, figure_refl_phase, phase_analysis, S4_run, add_colorbar, figure_pixel_plot, find_closest_value
 
-# plt.style.use(['science', 'nature', 'custom'])
+plt.style.use(['science', 'nature', 'custom'])
 
 def cm_to_inches(x):
     return x * 0.39
@@ -91,12 +91,6 @@ resmax = np.genfromtxt(
     unpack=True) 
 
 phase = phase_analysis(Ai,Ar)
-
-# figure_refl(lam, spectrum*100)
-
-# index = find_closest_value(lam, resmax)[0]
-# print(phase[index])
-
 pparam = dict(xlabel='Wavelength (nm)', ylabel=r'Reflection (\%)')
 
 fig, ax = plt.subplots()
@@ -131,14 +125,11 @@ print(qfac)
 # print(mask_ITO.shape)
 # print(data2.shape)
 # print(data_eps.shape)
-
 # data_field = data * mask_ITO
-
 # print(np.sum(np.abs(data_field)))
 
 if field == True:
     lambda1 = int(resmax)
-    # print(type(lambda1))
     args = (f'period = {period}; gratingthickness = {gratingthickness}; TiO2thickness = {TiO2thickness};'
             f'dutycycle = {dutycycle}; ridgewidth = {ridgewidth}; accindex = {accindex};'
             f'nharm = {nharm}; lambdain = {lambdain}; xstep = {xstep}; zstep = {zstep};' 
@@ -156,13 +147,9 @@ if field == True:
     
     datafile = 'fieldeps.csv'
     epsfield = np.genfromtxt(datafile, delimiter=',')
-    
     levels = np.linspace(-1,6,3)
     
-    # Define colors
     colors = ["white", "turquoise", "lightseagreen", "teal", "darkslategrey"]
-
-# Create the colormap
     cmap = LinearSegmentedColormap.from_list("custom_cmap", colors)
     
     if TEamp == 1:
@@ -172,5 +159,3 @@ if field == True:
         
     print(f'Resonant Wavelength = {lambda1} nm \n'
           f'Max Field Strength = {np.round(np.max(field),2)} V/m')
-    
-# plt.show()
